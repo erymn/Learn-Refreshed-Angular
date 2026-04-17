@@ -9,11 +9,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  template: `<h1>Hello {{name}}</h1>`
+  // template: `<h1>Hello {{name}}</h1>`
+  template: `
+    <h3>Hello {{name}}</h3>
+    <button (click)="name = 'Angular 21'">Reset</button>
+  `
 })
 
 class App{ 
-  name = 'Angular 22'
+  name = 'World'
 }
 
 bootstrapApplication(App);
