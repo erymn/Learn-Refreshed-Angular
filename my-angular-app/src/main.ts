@@ -1,11 +1,13 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-//import { App } from './app/app';
+import { App } from './app/app';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// bootstrapApplication(App, appConfig)
-//   .catch((err) => console.error(err));
+import {StructDirective} from './app/struct-directive/struct-directive'
+
+bootstrapApplication(StructDirective, appConfig)
+  .catch((err) => console.error(err));
 
 // @Component({
 //   selector: 'app-root',
@@ -68,21 +70,21 @@ import { CommonModule } from '@angular/common';
 //   }
 // }
 
-//Null-safe navigation
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  template: `
-    <button (click)="toggle()">Toggle</button>
-    <p>Email: {{user?.profile?.email || '(none)'}}</p>
-  `
-})
+// //Null-safe navigation
+// @Component({
+//   selector: 'app-root',
+//   standalone: true,
+//   template: `
+//     <button (click)="toggle()">Toggle</button>
+//     <p>Email: {{user?.profile?.email || '(none)'}}</p>
+//   `
+// })
 
-class App{ 
-  user: { profile?: { email?: string } } | undefined = undefined;
-  toggle() {
-    this.user = this.user ? undefined : { profile: { email: 'a@example.com' } };
-  }
-}
+// class App{ 
+//   user: { profile?: { email?: string } } | undefined = undefined;
+//   toggle() {
+//     this.user = this.user ? undefined : { profile: { email: 'a@example.com' } };
+//   }
+// }
 
-bootstrapApplication(App);
+// bootstrapApplication(App);

@@ -1,0 +1,6 @@
+<button (click)="ok = !ok">Toggle</button>
+<div *ngIf="ok; else other">OK (karena var ok = true)</div>
+<ng-template #other>Not OK (karena var ok = false, pakai ng-template ini)</ng-template>
+<ul>
+  <li *ngFor="let item of items; index as i">{{ i }} - {{ item }}</li>
+</ul>
